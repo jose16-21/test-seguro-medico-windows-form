@@ -56,6 +56,8 @@
             this.NitProv = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.IdPer = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.BtnLimpiarPer = new System.Windows.Forms.Button();
             this.dgPer = new System.Windows.Forms.DataGridView();
             this.BtnIngresarPer = new System.Windows.Forms.Button();
@@ -71,24 +73,23 @@
             this.Apellido1Per = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.BtnLimpiarPac = new System.Windows.Forms.Button();
             this.dgPac = new System.Windows.Forms.DataGridView();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.BtnIngresar = new System.Windows.Forms.Button();
+            this.BtnBuscarPac = new System.Windows.Forms.Button();
+            this.BtnEliminarPac = new System.Windows.Forms.Button();
+            this.BtnActualizarPac = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.CoberturaPac = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.DeduciblePac = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
+            this.FechaCoberturaPac = new System.Windows.Forms.MonthCalendar();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TelefonoPac = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CodigoPac = new System.Windows.Forms.TextBox();
+            this.ddlPersonas = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -119,8 +120,6 @@
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label37 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.IdPer = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProv)).BeginInit();
@@ -425,6 +424,22 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // IdPer
+            // 
+            this.IdPer.Location = new System.Drawing.Point(56, 331);
+            this.IdPer.Name = "IdPer";
+            this.IdPer.Size = new System.Drawing.Size(296, 27);
+            this.IdPer.TabIndex = 24;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(56, 281);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 20);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "UUID";
+            // 
             // BtnLimpiarPer
             // 
             this.BtnLimpiarPer.Location = new System.Drawing.Point(852, 313);
@@ -553,24 +568,23 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.BtnLimpiarPac);
             this.tabPage4.Controls.Add(this.dgPac);
-            this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Controls.Add(this.button8);
-            this.tabPage4.Controls.Add(this.button9);
-            this.tabPage4.Controls.Add(this.button10);
-            this.tabPage4.Controls.Add(this.comboBox3);
-            this.tabPage4.Controls.Add(this.label23);
+            this.tabPage4.Controls.Add(this.BtnIngresar);
+            this.tabPage4.Controls.Add(this.BtnBuscarPac);
+            this.tabPage4.Controls.Add(this.BtnEliminarPac);
+            this.tabPage4.Controls.Add(this.BtnActualizarPac);
             this.tabPage4.Controls.Add(this.label22);
-            this.tabPage4.Controls.Add(this.textBox8);
+            this.tabPage4.Controls.Add(this.CoberturaPac);
             this.tabPage4.Controls.Add(this.label21);
-            this.tabPage4.Controls.Add(this.textBox7);
+            this.tabPage4.Controls.Add(this.DeduciblePac);
             this.tabPage4.Controls.Add(this.label20);
-            this.tabPage4.Controls.Add(this.monthCalendar2);
+            this.tabPage4.Controls.Add(this.FechaCoberturaPac);
             this.tabPage4.Controls.Add(this.label19);
-            this.tabPage4.Controls.Add(this.textBox6);
+            this.tabPage4.Controls.Add(this.TelefonoPac);
             this.tabPage4.Controls.Add(this.label18);
-            this.tabPage4.Controls.Add(this.textBox5);
-            this.tabPage4.Controls.Add(this.comboBox2);
+            this.tabPage4.Controls.Add(this.CodigoPac);
+            this.tabPage4.Controls.Add(this.ddlPersonas);
             this.tabPage4.Controls.Add(this.label17);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
@@ -579,6 +593,16 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // BtnLimpiarPac
+            // 
+            this.BtnLimpiarPac.Location = new System.Drawing.Point(838, 300);
+            this.BtnLimpiarPac.Name = "BtnLimpiarPac";
+            this.BtnLimpiarPac.Size = new System.Drawing.Size(136, 29);
+            this.BtnLimpiarPac.TabIndex = 34;
+            this.BtnLimpiarPac.Text = "Limpiar";
+            this.BtnLimpiarPac.UseVisualStyleBackColor = true;
+            this.BtnLimpiarPac.Click += new System.EventHandler(this.BtnLimpiarPac_Click);
             // 
             // dgPac
             // 
@@ -593,58 +617,41 @@
             this.dgPac.Size = new System.Drawing.Size(953, 188);
             this.dgPac.TabIndex = 33;
             // 
-            // button7
+            // BtnIngresar
             // 
-            this.button7.Location = new System.Drawing.Point(838, 236);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(136, 29);
-            this.button7.TabIndex = 32;
-            this.button7.Text = "Ingresar";
-            this.button7.UseVisualStyleBackColor = true;
+            this.BtnIngresar.Location = new System.Drawing.Point(838, 236);
+            this.BtnIngresar.Name = "BtnIngresar";
+            this.BtnIngresar.Size = new System.Drawing.Size(136, 29);
+            this.BtnIngresar.TabIndex = 32;
+            this.BtnIngresar.Text = "Ingresar";
+            this.BtnIngresar.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // BtnBuscarPac
             // 
-            this.button8.Location = new System.Drawing.Point(838, 174);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(136, 29);
-            this.button8.TabIndex = 31;
-            this.button8.Text = "Buscar";
-            this.button8.UseVisualStyleBackColor = true;
+            this.BtnBuscarPac.Location = new System.Drawing.Point(838, 174);
+            this.BtnBuscarPac.Name = "BtnBuscarPac";
+            this.BtnBuscarPac.Size = new System.Drawing.Size(136, 29);
+            this.BtnBuscarPac.TabIndex = 31;
+            this.BtnBuscarPac.Text = "Buscar";
+            this.BtnBuscarPac.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // BtnEliminarPac
             // 
-            this.button9.Location = new System.Drawing.Point(838, 108);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(136, 29);
-            this.button9.TabIndex = 30;
-            this.button9.Text = "Eliminar";
-            this.button9.UseVisualStyleBackColor = true;
+            this.BtnEliminarPac.Location = new System.Drawing.Point(838, 108);
+            this.BtnEliminarPac.Name = "BtnEliminarPac";
+            this.BtnEliminarPac.Size = new System.Drawing.Size(136, 29);
+            this.BtnEliminarPac.TabIndex = 30;
+            this.BtnEliminarPac.Text = "Eliminar";
+            this.BtnEliminarPac.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // BtnActualizarPac
             // 
-            this.button10.Location = new System.Drawing.Point(838, 43);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(136, 29);
-            this.button10.TabIndex = 29;
-            this.button10.Text = "Actualizar";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(551, 81);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(151, 28);
-            this.comboBox3.TabIndex = 27;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(551, 39);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(54, 20);
-            this.label23.TabIndex = 28;
-            this.label23.Text = "Estado";
+            this.BtnActualizarPac.Location = new System.Drawing.Point(838, 43);
+            this.BtnActualizarPac.Name = "BtnActualizarPac";
+            this.BtnActualizarPac.Size = new System.Drawing.Size(136, 29);
+            this.BtnActualizarPac.TabIndex = 29;
+            this.BtnActualizarPac.Text = "Actualizar";
+            this.BtnActualizarPac.UseVisualStyleBackColor = true;
             // 
             // label22
             // 
@@ -655,12 +662,12 @@
             this.label22.TabIndex = 26;
             this.label22.Text = "Monto Cobertura";
             // 
-            // textBox8
+            // CoberturaPac
             // 
-            this.textBox8.Location = new System.Drawing.Point(551, 191);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(125, 27);
-            this.textBox8.TabIndex = 25;
+            this.CoberturaPac.Location = new System.Drawing.Point(551, 191);
+            this.CoberturaPac.Name = "CoberturaPac";
+            this.CoberturaPac.Size = new System.Drawing.Size(125, 27);
+            this.CoberturaPac.TabIndex = 25;
             // 
             // label21
             // 
@@ -671,12 +678,12 @@
             this.label21.TabIndex = 24;
             this.label21.Text = "Monto Deducible";
             // 
-            // textBox7
+            // DeduciblePac
             // 
-            this.textBox7.Location = new System.Drawing.Point(379, 191);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(125, 27);
-            this.textBox7.TabIndex = 23;
+            this.DeduciblePac.Location = new System.Drawing.Point(379, 191);
+            this.DeduciblePac.Name = "DeduciblePac";
+            this.DeduciblePac.Size = new System.Drawing.Size(125, 27);
+            this.DeduciblePac.TabIndex = 23;
             // 
             // label20
             // 
@@ -687,11 +694,11 @@
             this.label20.TabIndex = 22;
             this.label20.Text = "Fecha Cobertura";
             // 
-            // monthCalendar2
+            // FechaCoberturaPac
             // 
-            this.monthCalendar2.Location = new System.Drawing.Point(31, 174);
-            this.monthCalendar2.Name = "monthCalendar2";
-            this.monthCalendar2.TabIndex = 21;
+            this.FechaCoberturaPac.Location = new System.Drawing.Point(31, 174);
+            this.FechaCoberturaPac.Name = "FechaCoberturaPac";
+            this.FechaCoberturaPac.TabIndex = 21;
             // 
             // label19
             // 
@@ -702,12 +709,12 @@
             this.label19.TabIndex = 20;
             this.label19.Text = "Telefono";
             // 
-            // textBox6
+            // TelefonoPac
             // 
-            this.textBox6.Location = new System.Drawing.Point(379, 82);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 27);
-            this.textBox6.TabIndex = 19;
+            this.TelefonoPac.Location = new System.Drawing.Point(379, 82);
+            this.TelefonoPac.Name = "TelefonoPac";
+            this.TelefonoPac.Size = new System.Drawing.Size(125, 27);
+            this.TelefonoPac.TabIndex = 19;
             // 
             // label18
             // 
@@ -718,20 +725,20 @@
             this.label18.TabIndex = 18;
             this.label18.Text = "Codigo";
             // 
-            // textBox5
+            // CodigoPac
             // 
-            this.textBox5.Location = new System.Drawing.Point(221, 82);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 27);
-            this.textBox5.TabIndex = 17;
+            this.CodigoPac.Location = new System.Drawing.Point(221, 82);
+            this.CodigoPac.Name = "CodigoPac";
+            this.CodigoPac.Size = new System.Drawing.Size(125, 27);
+            this.CodigoPac.TabIndex = 17;
             // 
-            // comboBox2
+            // ddlPersonas
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(31, 81);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
-            this.comboBox2.TabIndex = 15;
+            this.ddlPersonas.FormattingEnabled = true;
+            this.ddlPersonas.Location = new System.Drawing.Point(31, 81);
+            this.ddlPersonas.Name = "ddlPersonas";
+            this.ddlPersonas.Size = new System.Drawing.Size(151, 28);
+            this.ddlPersonas.TabIndex = 15;
             // 
             // label17
             // 
@@ -1008,22 +1015,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(300, 188);
             this.dataGridView1.TabIndex = 16;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(56, 281);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 20);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "UUID";
-            // 
-            // IdPer
-            // 
-            this.IdPer.Location = new System.Drawing.Point(56, 331);
-            this.IdPer.Name = "IdPer";
-            this.IdPer.Size = new System.Drawing.Size(296, 27);
-            this.IdPer.TabIndex = 24;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1087,19 +1078,17 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox TelefonoPac;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox CodigoPac;
+        private System.Windows.Forms.ComboBox ddlPersonas;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox CoberturaPac;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox DeduciblePac;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.MonthCalendar monthCalendar2;
+        private System.Windows.Forms.MonthCalendar FechaCoberturaPac;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label27;
@@ -1139,10 +1128,10 @@
         private System.Windows.Forms.Button BtnEliminarPer;
         private System.Windows.Forms.Button BtpnBuscarPer;
         private System.Windows.Forms.Button BtnIngresarPer;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button BtnIngresar;
+        private System.Windows.Forms.Button BtnBuscarPac;
+        private System.Windows.Forms.Button BtnEliminarPac;
+        private System.Windows.Forms.Button BtnActualizarPac;
         private System.Windows.Forms.DataGridView dgPer;
         private System.Windows.Forms.DataGridView dgPa;
         private System.Windows.Forms.DataGridView dgPac;
@@ -1150,6 +1139,7 @@
         private System.Windows.Forms.Button BtnLimpiarPer;
         private System.Windows.Forms.TextBox IdPer;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button BtnLimpiarPac;
     }
 }
 

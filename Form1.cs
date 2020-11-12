@@ -124,9 +124,7 @@ namespace WindowsFormsApp
         {
             InitializeComponent();
             ///llena el  combo box
-            //DropProveedores.DataSource = respuestas;
-            //DropProveedores.DisplayMember = "nombre";
-            //DropProveedores.ValueMember = "id";
+
             CargaPac();
             CargaProv();
             CargaPer();
@@ -142,6 +140,9 @@ namespace WindowsFormsApp
         {
             dynamic resPer = this.Get(Url + UrlPersonas, null);
             dgPer.DataSource = resPer;
+            ddlPersonas.DataSource = resPer;
+            ddlPersonas.DisplayMember = "PrimerNombre";
+            ddlPersonas.ValueMember = "Id";
         }
         private void CargaProv()
         {
@@ -170,23 +171,48 @@ namespace WindowsFormsApp
         }
 
 
-       
-
-     
-
         private Proveedor GetValueProd()
         {
-            var Proveedor = new Proveedor();
-            Proveedor.Nit = NitProv.Text;
-            Proveedor.Nombre = NombreProv.Text;
-            Proveedor.RazonSocial = RazonProv.Text;
-            Proveedor.Direccion = DireccionPrvo.Text;
-            Proveedor.Telefono = Int32.Parse(TelefonoProv.Text);
-            Proveedor.Estado = "Activo";
+            try
+            {
+                var Proveedor = new Proveedor();
+                Proveedor.Nit = NitProv.Text;
+                Proveedor.Nombre = NombreProv.Text;
+                Proveedor.RazonSocial = RazonProv.Text;
+                Proveedor.Direccion = DireccionPrvo.Text;
+                Proveedor.Telefono = Int32.Parse(TelefonoProv.Text);
+                Proveedor.Estado = "Activo";
 
-            return Proveedor;
+                return Proveedor;
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Validar correctamente El ingreso de Datos", Ex.Message.ToString());
+                return null;
+            }
         }
 
+        private Paciente GetValuePac()
+        {
+            try
+            {
+                var Paciente = new Paciente();
+                Paciente.Codigo = Int32.Parse(CodigoPac.Text);
+                Paciente.FechaCobertura = FechaCoberturaPac.SelectionRange.Start;
+                Paciente.MontoCobertura = Decimal.Parse(CoberturaPac.Text);
+                Paciente.MontoDeducible = Decimal.Parse(DeduciblePac.Text);
+                Paciente.Telefono = Int32.Parse(TelefonoPac.Text);
+                Paciente.PersonaId = Guid.Parse(ddlPersonas.SelectedItem.ToString());
+                Paciente.Estado = "Activo";
+
+                return Paciente;
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Validar correctamente El ingreso de Datos", Ex.Message.ToString());
+                return null;
+            }
+        }
         private Personas GetValuePer()
         {
             try
@@ -203,24 +229,33 @@ namespace WindowsFormsApp
 
                 return Personas;
 
-            }catch(Exception Ex)
+            }
+            catch (Exception Ex)
             {
-                MessageBox.Show("Validar correctamente El ingreso de Datos" , Ex.Message.ToString());
+                MessageBox.Show("Validar correctamente El ingreso de Datos", Ex.Message.ToString());
                 return null;
             }
-            
+
         }
 
+        private void ClearFormPac()
+        {
+            CodigoPac.Clear();
+            TelefonoPac.Clear();
+            DeduciblePac.Clear();
+            CoberturaPac.Clear();
+
+        }
         private void ClearFormPer()
         {
             IdPer.Clear();
-           Nombre1Per.Clear();
-           Nombre2Per.Clear();
-           Apellido1Per.Clear();
-           Apellido2Per.Clear();
-           EdadPer.Clear();
-           DireccionPer.Clear();
-            
+            Nombre1Per.Clear();
+            Nombre2Per.Clear();
+            Apellido1Per.Clear();
+            Apellido2Per.Clear();
+            EdadPer.Clear();
+            DireccionPer.Clear();
+
         }
         private void ClearForm()
         {
@@ -241,7 +276,7 @@ namespace WindowsFormsApp
 
             try
             {
-               dynamic respuesta = this.Post(Url + UrlProveedores, jsonString);
+                dynamic respuesta = this.Post(Url + UrlProveedores, jsonString);
                 ClearForm();
                 CargaProv();
                 MessageBox.Show("Ingresado correctamente");
@@ -447,13 +482,11 @@ namespace WindowsFormsApp
 
 
                     Nombre1Per.Text = personas.PrimerNombre;
-                    Nombre2Per.Text = personas.SegundoNombre ;
-                    Apellido1Per.Text = personas.PrimerApellido  ;
-                    Apellido2Per.Text =personas.SegundoApellido;
+                    Nombre2Per.Text = personas.SegundoNombre;
+                    Apellido1Per.Text = personas.PrimerApellido;
+                    Apellido2Per.Text = personas.SegundoApellido;
                     EdadPer.Text = personas.Edad.ToString();
                     DireccionPer.Text = personas.Direccion;
-                    
-                    
 
                 }
 
@@ -462,6 +495,11 @@ namespace WindowsFormsApp
             {
                 MessageBox.Show(Ex.Message.ToString());
             }
+        }
+
+        private void BtnLimpiarPac_Click(object sender, EventArgs e)
+        {
+            ClearFormPac();
         }
     }
 }
