@@ -19,32 +19,32 @@ namespace WindowsFormsApp
 {
     public partial class Form1 : Form
     {
-        //public dynamic Put(string url, string json, string autorizacion = null)
-        //{
-        //    try
-        //    {
-        //        var client = new RestClient(url);
-        //        var request = new RestRequest(Method.PUT);
-        //        request.AddHeader("content-type", "application/json");
-        //        request.AddParameter("application/json", json, ParameterType.RequestBody);
+        public dynamic Put(string url, string json, string autorizacion = null)
+        {
+            try
+            {
+                var client = new RestClient(url);
+                var request = new RestRequest(Method.PUT);
+                request.AddHeader("content-type", "application/json");
+                request.AddParameter("application/json", json, ParameterType.RequestBody);
 
-        //        if (autorizacion != null)
-        //        {
-        //            request.AddHeader("Authorization", autorizacion);
-        //        }
+                if (autorizacion != null)
+                {
+                    request.AddHeader("Authorization", autorizacion);
+                }
 
-        //        IRestResponse response = client.Execute(request);
+                IRestResponse response = client.Execute(request);
 
-        //        dynamic datos = JsonConvert.DeserializeObject(response.Content);
+                dynamic datos = JsonConvert.DeserializeObject(response.Content);
 
-        //        return datos;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //        return null;
-        //    }
-        //}
+                return datos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
         public dynamic Post(string url, string json, string autorizacion = null)
         {
             try
@@ -170,58 +170,9 @@ namespace WindowsFormsApp
         }
 
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //string json = "{\"id\":0,\"nombre\":\"" + NombreSer.Text + "\",\"descripcion\":\"" + DescripcionSer.Text + "\",\"proveedorId\":" + DropProveedores.SelectedIndex + "}";
+       
 
-
-
-            ////var cadena =  + DescripcionSer.Text + DropProveedores.SelectedIndex;
-            //try
-            //{
-            //    String Entidad = "servicios";
-            //    dynamic respuesta = this.Post(Url + Entidad, json);
-
-            //    MessageBox.Show(respuesta.ToString());
-            //    NombreSer.Clear();
-            //    DescripcionSer.Clear();
-            //    MessageBox.Show("Ingresado correctamente");
-            //    //else formulario que tengo activo pueda interactura con el nuevo formulario               
-            //}
-            //catch (Exception error)
-            //{
-            //    MessageBox.Show("Datos Invalidos Intente de Nuevo");
-            //    Console.WriteLine(error.Message);
-            //}
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            //string json = "{\"id\":0,\"nombres\":\"" + Nombres.Text + "\",\"apellidos\":\"" + Apellidos.Text + "\",\"edad\":" + Edad.Text + ",\"direccion\":\"" + Direccion.Text + "\"}";
-
-
-
-            //var cadena =  + DescripcionSer.Text + DropProveedores.SelectedIndex;
-            try
-            {
-                //String Entidad = "personas";
-                //dynamic respuesta = this.Post(Url + Entidad, json);
-
-                //MessageBox.Show(respuesta.ToString());
-                //Nombres.Clear();
-                //Apellidos.Clear();
-                //Direccion.Clear();
-                //Edad.Clear();
-                MessageBox.Show("Ingresado correctamente");
-                //else formulario que tengo activo pueda interactura con el nuevo formulario               
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show("Datos Invalidos Intente de Nuevo");
-                Console.WriteLine(error.Message);
-            }
-        }
+     
 
         private Proveedor GetValueProd()
         {
@@ -290,7 +241,7 @@ namespace WindowsFormsApp
 
             try
             {
-                //dynamic respuesta = this.Post(Url + UrlProveedores, jsonString);
+               dynamic respuesta = this.Post(Url + UrlProveedores, jsonString);
                 ClearForm();
                 CargaProv();
                 MessageBox.Show("Ingresado correctamente");
@@ -330,15 +281,15 @@ namespace WindowsFormsApp
                 else
                 {
 
-                    //dynamic resProv = this.Get(Url + UrlProveedores + "/" + IdProv.Text, null);
+                    dynamic resProv = this.Get(Url + UrlProveedores + "/" + IdProv.Text, null);
 
-                    //Proveedor proveedor = JsonConvert.DeserializeObject<Proveedor>(resProv.ToString());
+                    Proveedor proveedor = JsonConvert.DeserializeObject<Proveedor>(resProv.ToString());
 
-                    //NitProv.Text = proveedor.Nit;
-                    //NombreProv.Text = proveedor.Nombre;
-                    //RazonProv.Text = proveedor.RazonSocial;
-                    //DireccionPrvo.Text = proveedor.Direccion;
-                    //TelefonoProv.Text = proveedor.Telefono.ToString();
+                    NitProv.Text = proveedor.Nit;
+                    NombreProv.Text = proveedor.Nombre;
+                    RazonProv.Text = proveedor.RazonSocial;
+                    DireccionPrvo.Text = proveedor.Direccion;
+                    TelefonoProv.Text = proveedor.Telefono.ToString();
 
                 }
 
@@ -359,7 +310,7 @@ namespace WindowsFormsApp
             try
             {
 
-                //dynamic respuesta = this.Put(Url + UrlProveedores + "/" + IdProv.Text, jsonString, null);
+                dynamic respuesta = this.Put(Url + UrlProveedores + "/" + IdProv.Text, jsonString, null);
                 CargaProv();
                 ClearForm();
                 MessageBox.Show("Actualizado correctamente");
@@ -384,10 +335,10 @@ namespace WindowsFormsApp
                 else
                 {
 
-                    //dynamic resProv = this.Delete(Url + UrlProveedores + "/" + IdProv.Text, null);
-                    //Proveedor proveedor = JsonConvert.DeserializeObject<Proveedor>(resProv.ToString());
-                    //ClearForm();
-                    //CargaProv();
+                    dynamic resProv = this.Delete(Url + UrlProveedores + "/" + IdProv.Text, null);
+                    Proveedor proveedor = JsonConvert.DeserializeObject<Proveedor>(resProv.ToString());
+                    ClearForm();
+                    CargaProv();
                     MessageBox.Show("Eliminado correctamente");
                 }
 
@@ -432,12 +383,50 @@ namespace WindowsFormsApp
 
         private void BtnActualizarPer_Click(object sender, EventArgs e)
         {
+            var Persona = GetValuePer();
 
+            var jsonString = JsonConvert.SerializeObject(Persona);
+
+            try
+            {
+
+                dynamic respuesta = this.Put(Url + UrlPersonas + "/" + IdPer.Text, jsonString, null);
+                CargaPer();
+                ClearFormPer();
+                MessageBox.Show("Actualizado correctamente");
+                //else formulario que tengo activo pueda interactura con el nuevo formulario               
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Datos Invalidos Intente de Nuevo");
+                Console.WriteLine(error.Message);
+            }
         }
 
         private void BtnEliminarPer_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                if (IdPer.Text == "")
+                {
+                    MessageBox.Show("Agregue un UUID para Eliminar su Persona");
+                }
+                else
+                {
+
+                    dynamic resProv = this.Delete(Url + UrlPersonas + "/" + IdPer.Text, null);
+                    Proveedor personas = JsonConvert.DeserializeObject<Personas>(resProv.ToString());
+                    ClearForm();
+                    CargaProv();
+                    MessageBox.Show("Eliminado correctamente");
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString());
+            }
         }
 
         private void BtpnBuscarPer_Click(object sender, EventArgs e)
