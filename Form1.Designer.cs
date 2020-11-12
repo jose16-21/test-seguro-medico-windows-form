@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Nombres = new System.Windows.Forms.TextBox();
+            this.Apellidos = new System.Windows.Forms.TextBox();
+            this.Direccion = new System.Windows.Forms.TextBox();
+            this.DescripcionSer = new System.Windows.Forms.TextBox();
+            this.NombreSer = new System.Windows.Forms.TextBox();
+            this.Edad = new System.Windows.Forms.TextBox();
+            this.DireccionPrvo = new System.Windows.Forms.TextBox();
+            this.RazonProv = new System.Windows.Forms.TextBox();
+            this.NombreProv = new System.Windows.Forms.TextBox();
+            this.DropProveedores = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnPersona = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnProveedor = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.BtnServicio = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -64,76 +64,76 @@
             this.statusStrip1.Text = "statusStrip1";
             this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
-            // textBox1
+            // Nombres
             // 
-            this.textBox1.Location = new System.Drawing.Point(48, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 1;
+            this.Nombres.Location = new System.Drawing.Point(48, 84);
+            this.Nombres.Name = "Nombres";
+            this.Nombres.Size = new System.Drawing.Size(125, 27);
+            this.Nombres.TabIndex = 1;
             // 
-            // textBox2
+            // Apellidos
             // 
-            this.textBox2.Location = new System.Drawing.Point(214, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 1;
+            this.Apellidos.Location = new System.Drawing.Point(214, 84);
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.Size = new System.Drawing.Size(125, 27);
+            this.Apellidos.TabIndex = 1;
             // 
-            // textBox3
+            // Direccion
             // 
-            this.textBox3.Location = new System.Drawing.Point(370, 88);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 1;
+            this.Direccion.Location = new System.Drawing.Point(370, 88);
+            this.Direccion.Name = "Direccion";
+            this.Direccion.Size = new System.Drawing.Size(125, 27);
+            this.Direccion.TabIndex = 1;
             // 
-            // textBox6
+            // DescripcionSer
             // 
-            this.textBox6.Location = new System.Drawing.Point(193, 416);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(125, 27);
-            this.textBox6.TabIndex = 1;
+            this.DescripcionSer.Location = new System.Drawing.Point(193, 416);
+            this.DescripcionSer.Name = "DescripcionSer";
+            this.DescripcionSer.Size = new System.Drawing.Size(125, 27);
+            this.DescripcionSer.TabIndex = 1;
             // 
-            // textBox7
+            // NombreSer
             // 
-            this.textBox7.Location = new System.Drawing.Point(48, 416);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(125, 27);
-            this.textBox7.TabIndex = 1;
+            this.NombreSer.Location = new System.Drawing.Point(48, 416);
+            this.NombreSer.Name = "NombreSer";
+            this.NombreSer.Size = new System.Drawing.Size(125, 27);
+            this.NombreSer.TabIndex = 1;
             // 
-            // textBox8
+            // Edad
             // 
-            this.textBox8.Location = new System.Drawing.Point(537, 88);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(46, 27);
-            this.textBox8.TabIndex = 1;
+            this.Edad.Location = new System.Drawing.Point(537, 88);
+            this.Edad.Name = "Edad";
+            this.Edad.Size = new System.Drawing.Size(46, 27);
+            this.Edad.TabIndex = 1;
             // 
-            // textBox9
+            // DireccionPrvo
             // 
-            this.textBox9.Location = new System.Drawing.Point(342, 259);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(125, 27);
-            this.textBox9.TabIndex = 1;
+            this.DireccionPrvo.Location = new System.Drawing.Point(342, 259);
+            this.DireccionPrvo.Name = "DireccionPrvo";
+            this.DireccionPrvo.Size = new System.Drawing.Size(125, 27);
+            this.DireccionPrvo.TabIndex = 1;
             // 
-            // textBox10
+            // RazonProv
             // 
-            this.textBox10.Location = new System.Drawing.Point(193, 259);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(125, 27);
-            this.textBox10.TabIndex = 1;
+            this.RazonProv.Location = new System.Drawing.Point(193, 259);
+            this.RazonProv.Name = "RazonProv";
+            this.RazonProv.Size = new System.Drawing.Size(125, 27);
+            this.RazonProv.TabIndex = 1;
             // 
-            // textBox11
+            // NombreProv
             // 
-            this.textBox11.Location = new System.Drawing.Point(48, 259);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(125, 27);
-            this.textBox11.TabIndex = 1;
+            this.NombreProv.Location = new System.Drawing.Point(48, 259);
+            this.NombreProv.Name = "NombreProv";
+            this.NombreProv.Size = new System.Drawing.Size(125, 27);
+            this.NombreProv.TabIndex = 1;
             // 
-            // comboBox1
+            // DropProveedores
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(342, 416);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 2;
+            this.DropProveedores.FormattingEnabled = true;
+            this.DropProveedores.Location = new System.Drawing.Point(342, 416);
+            this.DropProveedores.Name = "DropProveedores";
+            this.DropProveedores.Size = new System.Drawing.Size(151, 28);
+            this.DropProveedores.TabIndex = 2;
             // 
             // label2
             // 
@@ -171,14 +171,15 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Edad";
             // 
-            // button1
+            // BtnPersona
             // 
-            this.button1.Location = new System.Drawing.Point(48, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 29);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Ingresar Persona";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnPersona.Location = new System.Drawing.Point(48, 142);
+            this.BtnPersona.Name = "BtnPersona";
+            this.BtnPersona.Size = new System.Drawing.Size(154, 29);
+            this.BtnPersona.TabIndex = 7;
+            this.BtnPersona.Text = "Ingresar Persona";
+            this.BtnPersona.UseVisualStyleBackColor = true;
+            this.BtnPersona.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -207,14 +208,15 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Direccion";
             // 
-            // button2
+            // BtnProveedor
             // 
-            this.button2.Location = new System.Drawing.Point(48, 316);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 29);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Ingresar Proveedor";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnProveedor.Location = new System.Drawing.Point(48, 316);
+            this.BtnProveedor.Name = "BtnProveedor";
+            this.BtnProveedor.Size = new System.Drawing.Size(174, 29);
+            this.BtnProveedor.TabIndex = 11;
+            this.BtnProveedor.Text = "Ingresar Proveedor";
+            this.BtnProveedor.UseVisualStyleBackColor = true;
+            this.BtnProveedor.Click += new System.EventHandler(this.button2_Click);
             // 
             // label8
             // 
@@ -243,44 +245,44 @@
             this.label10.TabIndex = 14;
             this.label10.Text = "Proveedores";
             // 
-            // button3
+            // BtnServicio
             // 
-            this.button3.Location = new System.Drawing.Point(48, 476);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(174, 29);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Ingresar Servicio";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.BtnServicio.Location = new System.Drawing.Point(48, 476);
+            this.BtnServicio.Name = "BtnServicio";
+            this.BtnServicio.Size = new System.Drawing.Size(174, 29);
+            this.BtnServicio.TabIndex = 15;
+            this.BtnServicio.Text = "Ingresar Servicio";
+            this.BtnServicio.UseVisualStyleBackColor = true;
+            this.BtnServicio.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 548);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.BtnServicio);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtnProveedor);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnPersona);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DropProveedores);
+            this.Controls.Add(this.NombreProv);
+            this.Controls.Add(this.RazonProv);
+            this.Controls.Add(this.DireccionPrvo);
+            this.Controls.Add(this.Edad);
+            this.Controls.Add(this.NombreSer);
+            this.Controls.Add(this.DescripcionSer);
+            this.Controls.Add(this.Direccion);
+            this.Controls.Add(this.Apellidos);
+            this.Controls.Add(this.Nombres);
             this.Controls.Add(this.statusStrip1);
             this.Name = "Form1";
             this.Text = "Segundo Parcial";
@@ -293,29 +295,29 @@
         #endregion
 
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox Nombres;
+        private System.Windows.Forms.TextBox Apellidos;
+        private System.Windows.Forms.TextBox Direccion;
+        private System.Windows.Forms.TextBox DescripcionSer;
+        private System.Windows.Forms.TextBox NombreSer;
+        private System.Windows.Forms.TextBox Edad;
+        private System.Windows.Forms.TextBox DireccionPrvo;
+        private System.Windows.Forms.TextBox RazonProv;
+        private System.Windows.Forms.TextBox NombreProv;
+        private System.Windows.Forms.ComboBox DropProveedores;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnPersona;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnProveedor;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnServicio;
     }
 }
 

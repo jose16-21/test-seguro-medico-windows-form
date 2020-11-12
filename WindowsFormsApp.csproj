@@ -6,4 +6,10 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="RestSharp" Version="106.11.5" />
+    <PackageReference Include="RestSharp.NetCore1" Version="1.0.0" />
+  </ItemGroup>
+
 </Project>
