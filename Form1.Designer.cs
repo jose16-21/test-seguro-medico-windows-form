@@ -92,34 +92,36 @@
             this.ddlPersonas = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.dgPrima = new System.Windows.Forms.DataGridView();
+            this.IngresarPri = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
+            this.MontoPri = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.monthCalendar4 = new System.Windows.Forms.MonthCalendar();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.FechaPagoPri = new System.Windows.Forms.MonthCalendar();
+            this.MesPri = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.anioPri = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.BoletaPri = new System.Windows.Forms.TextBox();
+            this.ddlPacientePri = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.DgFact = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.CantidadFact = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.monthCalendar3 = new System.Windows.Forms.MonthCalendar();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.FechaCompraFact = new System.Windows.Forms.MonthCalendar();
+            this.MontoFact = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.NumeroFact = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.SerieFact = new System.Windows.Forms.TextBox();
+            this.ddPacienteFac = new System.Windows.Forms.ComboBox();
             this.label37 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BgnIngresoFact = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProv)).BeginInit();
@@ -128,7 +130,9 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPac)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPrima)).BeginInit();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgFact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -625,6 +629,7 @@
             this.BtnIngresar.TabIndex = 32;
             this.BtnIngresar.Text = "Ingresar";
             this.BtnIngresar.UseVisualStyleBackColor = true;
+            this.BtnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
             // 
             // BtnBuscarPac
             // 
@@ -751,19 +756,19 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.comboBox5);
+            this.tabPage5.Controls.Add(this.dgPrima);
+            this.tabPage5.Controls.Add(this.IngresarPri);
             this.tabPage5.Controls.Add(this.label28);
-            this.tabPage5.Controls.Add(this.textBox13);
-            this.tabPage5.Controls.Add(this.label30);
+            this.tabPage5.Controls.Add(this.MontoPri);
             this.tabPage5.Controls.Add(this.label29);
-            this.tabPage5.Controls.Add(this.monthCalendar4);
-            this.tabPage5.Controls.Add(this.textBox10);
+            this.tabPage5.Controls.Add(this.FechaPagoPri);
+            this.tabPage5.Controls.Add(this.MesPri);
             this.tabPage5.Controls.Add(this.label27);
-            this.tabPage5.Controls.Add(this.textBox11);
+            this.tabPage5.Controls.Add(this.anioPri);
             this.tabPage5.Controls.Add(this.label26);
             this.tabPage5.Controls.Add(this.label25);
-            this.tabPage5.Controls.Add(this.textBox9);
-            this.tabPage5.Controls.Add(this.comboBox4);
+            this.tabPage5.Controls.Add(this.BoletaPri);
+            this.tabPage5.Controls.Add(this.ddlPacientePri);
             this.tabPage5.Controls.Add(this.label24);
             this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
@@ -773,61 +778,67 @@
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // comboBox5
+            // dgPrima
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(537, 234);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(151, 28);
-            this.comboBox5.TabIndex = 31;
+            this.dgPrima.AllowUserToAddRows = false;
+            this.dgPrima.AllowUserToDeleteRows = false;
+            this.dgPrima.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPrima.Location = new System.Drawing.Point(49, 401);
+            this.dgPrima.Name = "dgPrima";
+            this.dgPrima.ReadOnly = true;
+            this.dgPrima.RowHeadersWidth = 51;
+            this.dgPrima.RowTemplate.Height = 29;
+            this.dgPrima.Size = new System.Drawing.Size(922, 188);
+            this.dgPrima.TabIndex = 32;
+            // 
+            // IngresarPri
+            // 
+            this.IngresarPri.Location = new System.Drawing.Point(780, 180);
+            this.IngresarPri.Name = "IngresarPri";
+            this.IngresarPri.Size = new System.Drawing.Size(160, 29);
+            this.IngresarPri.TabIndex = 31;
+            this.IngresarPri.Text = "Ingresar";
+            this.IngresarPri.UseVisualStyleBackColor = true;
+            this.IngresarPri.Click += new System.EventHandler(this.IngresarPri_Click);
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(375, 192);
+            this.label28.Location = new System.Drawing.Point(375, 136);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(90, 20);
             this.label28.TabIndex = 30;
             this.label28.Text = "Monto Pago";
             // 
-            // textBox13
+            // MontoPri
             // 
-            this.textBox13.Location = new System.Drawing.Point(375, 234);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(125, 27);
-            this.textBox13.TabIndex = 29;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(537, 192);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(54, 20);
-            this.label30.TabIndex = 28;
-            this.label30.Text = "Estado";
+            this.MontoPri.Location = new System.Drawing.Point(375, 182);
+            this.MontoPri.Name = "MontoPri";
+            this.MontoPri.Size = new System.Drawing.Size(125, 27);
+            this.MontoPri.TabIndex = 29;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(49, 165);
+            this.label29.Location = new System.Drawing.Point(49, 136);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(84, 20);
             this.label29.TabIndex = 27;
             this.label29.Text = "Fecha Pago";
             this.label29.Click += new System.EventHandler(this.label29_Click);
             // 
-            // monthCalendar4
+            // FechaPagoPri
             // 
-            this.monthCalendar4.Location = new System.Drawing.Point(49, 209);
-            this.monthCalendar4.Name = "monthCalendar4";
-            this.monthCalendar4.TabIndex = 26;
+            this.FechaPagoPri.Location = new System.Drawing.Point(49, 182);
+            this.FechaPagoPri.Name = "FechaPagoPri";
+            this.FechaPagoPri.TabIndex = 26;
             // 
-            // textBox10
+            // MesPri
             // 
-            this.textBox10.Location = new System.Drawing.Point(607, 89);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(125, 27);
-            this.textBox10.TabIndex = 25;
+            this.MesPri.Location = new System.Drawing.Point(607, 89);
+            this.MesPri.Name = "MesPri";
+            this.MesPri.Size = new System.Drawing.Size(125, 27);
+            this.MesPri.TabIndex = 25;
             // 
             // label27
             // 
@@ -838,12 +849,12 @@
             this.label27.TabIndex = 24;
             this.label27.Text = "Año";
             // 
-            // textBox11
+            // anioPri
             // 
-            this.textBox11.Location = new System.Drawing.Point(445, 89);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(125, 27);
-            this.textBox11.TabIndex = 23;
+            this.anioPri.Location = new System.Drawing.Point(445, 89);
+            this.anioPri.Name = "anioPri";
+            this.anioPri.Size = new System.Drawing.Size(125, 27);
+            this.anioPri.TabIndex = 23;
             // 
             // label26
             // 
@@ -863,20 +874,20 @@
             this.label25.TabIndex = 20;
             this.label25.Text = "Boleta";
             // 
-            // textBox9
+            // BoletaPri
             // 
-            this.textBox9.Location = new System.Drawing.Point(247, 89);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(125, 27);
-            this.textBox9.TabIndex = 19;
+            this.BoletaPri.Location = new System.Drawing.Point(247, 89);
+            this.BoletaPri.Name = "BoletaPri";
+            this.BoletaPri.Size = new System.Drawing.Size(125, 27);
+            this.BoletaPri.TabIndex = 19;
             // 
-            // comboBox4
+            // ddlPacientePri
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(49, 89);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(151, 28);
-            this.comboBox4.TabIndex = 17;
+            this.ddlPacientePri.FormattingEnabled = true;
+            this.ddlPacientePri.Location = new System.Drawing.Point(49, 89);
+            this.ddlPacientePri.Name = "ddlPacientePri";
+            this.ddlPacientePri.Size = new System.Drawing.Size(151, 28);
+            this.ddlPacientePri.TabIndex = 17;
             // 
             // label24
             // 
@@ -889,17 +900,19 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.BgnIngresoFact);
+            this.tabPage6.Controls.Add(this.DgFact);
             this.tabPage6.Controls.Add(this.label31);
-            this.tabPage6.Controls.Add(this.textBox12);
+            this.tabPage6.Controls.Add(this.CantidadFact);
             this.tabPage6.Controls.Add(this.label33);
-            this.tabPage6.Controls.Add(this.monthCalendar3);
-            this.tabPage6.Controls.Add(this.textBox14);
+            this.tabPage6.Controls.Add(this.FechaCompraFact);
+            this.tabPage6.Controls.Add(this.MontoFact);
             this.tabPage6.Controls.Add(this.label34);
-            this.tabPage6.Controls.Add(this.textBox15);
+            this.tabPage6.Controls.Add(this.NumeroFact);
             this.tabPage6.Controls.Add(this.label35);
             this.tabPage6.Controls.Add(this.label36);
-            this.tabPage6.Controls.Add(this.textBox16);
-            this.tabPage6.Controls.Add(this.comboBox7);
+            this.tabPage6.Controls.Add(this.SerieFact);
+            this.tabPage6.Controls.Add(this.ddPacienteFac);
             this.tabPage6.Controls.Add(this.label37);
             this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Name = "tabPage6";
@@ -909,43 +922,56 @@
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // DgFact
+            // 
+            this.DgFact.AllowUserToAddRows = false;
+            this.DgFact.AllowUserToDeleteRows = false;
+            this.DgFact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgFact.Location = new System.Drawing.Point(61, 395);
+            this.DgFact.Name = "DgFact";
+            this.DgFact.ReadOnly = true;
+            this.DgFact.RowHeadersWidth = 51;
+            this.DgFact.RowTemplate.Height = 29;
+            this.DgFact.Size = new System.Drawing.Size(944, 188);
+            this.DgFact.TabIndex = 45;
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(387, 193);
+            this.label31.Location = new System.Drawing.Point(387, 144);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(171, 20);
             this.label31.TabIndex = 44;
             this.label31.Text = "Cantidad Medicamentos";
             // 
-            // textBox12
+            // CantidadFact
             // 
-            this.textBox12.Location = new System.Drawing.Point(387, 235);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(125, 27);
-            this.textBox12.TabIndex = 43;
+            this.CantidadFact.Location = new System.Drawing.Point(387, 176);
+            this.CantidadFact.Name = "CantidadFact";
+            this.CantidadFact.Size = new System.Drawing.Size(125, 27);
+            this.CantidadFact.TabIndex = 43;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(61, 166);
+            this.label33.Location = new System.Drawing.Point(61, 135);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(104, 20);
             this.label33.TabIndex = 41;
             this.label33.Text = "Fecha Compra";
             // 
-            // monthCalendar3
+            // FechaCompraFact
             // 
-            this.monthCalendar3.Location = new System.Drawing.Point(61, 210);
-            this.monthCalendar3.Name = "monthCalendar3";
-            this.monthCalendar3.TabIndex = 40;
+            this.FechaCompraFact.Location = new System.Drawing.Point(61, 164);
+            this.FechaCompraFact.Name = "FechaCompraFact";
+            this.FechaCompraFact.TabIndex = 40;
             // 
-            // textBox14
+            // MontoFact
             // 
-            this.textBox14.Location = new System.Drawing.Point(619, 90);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(125, 27);
-            this.textBox14.TabIndex = 39;
+            this.MontoFact.Location = new System.Drawing.Point(619, 90);
+            this.MontoFact.Name = "MontoFact";
+            this.MontoFact.Size = new System.Drawing.Size(125, 27);
+            this.MontoFact.TabIndex = 39;
             // 
             // label34
             // 
@@ -956,12 +982,12 @@
             this.label34.TabIndex = 38;
             this.label34.Text = "Numero";
             // 
-            // textBox15
+            // NumeroFact
             // 
-            this.textBox15.Location = new System.Drawing.Point(457, 90);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(125, 27);
-            this.textBox15.TabIndex = 37;
+            this.NumeroFact.Location = new System.Drawing.Point(457, 90);
+            this.NumeroFact.Name = "NumeroFact";
+            this.NumeroFact.Size = new System.Drawing.Size(125, 27);
+            this.NumeroFact.TabIndex = 37;
             // 
             // label35
             // 
@@ -981,20 +1007,20 @@
             this.label36.TabIndex = 35;
             this.label36.Text = "Serie";
             // 
-            // textBox16
+            // SerieFact
             // 
-            this.textBox16.Location = new System.Drawing.Point(259, 90);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(125, 27);
-            this.textBox16.TabIndex = 34;
+            this.SerieFact.Location = new System.Drawing.Point(259, 90);
+            this.SerieFact.Name = "SerieFact";
+            this.SerieFact.Size = new System.Drawing.Size(125, 27);
+            this.SerieFact.TabIndex = 34;
             // 
-            // comboBox7
+            // ddPacienteFac
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(61, 90);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(151, 28);
-            this.comboBox7.TabIndex = 32;
+            this.ddPacienteFac.FormattingEnabled = true;
+            this.ddPacienteFac.Location = new System.Drawing.Point(61, 90);
+            this.ddPacienteFac.Name = "ddPacienteFac";
+            this.ddPacienteFac.Size = new System.Drawing.Size(151, 28);
+            this.ddPacienteFac.TabIndex = 32;
             // 
             // label37
             // 
@@ -1014,6 +1040,16 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(300, 188);
             this.dataGridView1.TabIndex = 16;
+            // 
+            // BgnIngresoFact
+            // 
+            this.BgnIngresoFact.Location = new System.Drawing.Point(619, 173);
+            this.BgnIngresoFact.Name = "BgnIngresoFact";
+            this.BgnIngresoFact.Size = new System.Drawing.Size(133, 29);
+            this.BgnIngresoFact.TabIndex = 46;
+            this.BgnIngresoFact.Text = "Ingresar";
+            this.BgnIngresoFact.UseVisualStyleBackColor = true;
+            this.BgnIngresoFact.Click += new System.EventHandler(this.BgnIngresoFact_Click);
             // 
             // Form1
             // 
@@ -1037,8 +1073,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgPac)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPrima)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgFact)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1090,32 +1128,30 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.MonthCalendar FechaCoberturaPac;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox MesPri;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox anioPri;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox BoletaPri;
+        private System.Windows.Forms.ComboBox ddlPacientePri;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.MonthCalendar monthCalendar4;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.MonthCalendar FechaPagoPri;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox MontoPri;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox CantidadFact;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.MonthCalendar monthCalendar3;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.MonthCalendar FechaCompraFact;
+        private System.Windows.Forms.TextBox MontoFact;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox NumeroFact;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.TextBox SerieFact;
+        private System.Windows.Forms.ComboBox ddPacienteFac;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.DataGridView dgProv;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -1140,6 +1176,10 @@
         private System.Windows.Forms.TextBox IdPer;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button BtnLimpiarPac;
+        private System.Windows.Forms.Button IngresarPri;
+        private System.Windows.Forms.DataGridView dgPrima;
+        private System.Windows.Forms.DataGridView DgFact;
+        private System.Windows.Forms.Button BgnIngresoFact;
     }
 }
 

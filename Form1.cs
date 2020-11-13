@@ -120,6 +120,9 @@ namespace WindowsFormsApp
         private string Url = "https://localhost:44370/api/";
         private string UrlProveedores = "Proveedores";
         private string UrlPersonas = "Personas";
+        private string UrlPacientes = "Pacientes";
+        private string UrlPagos = "Pagos";
+        private string UrlFactura = "Facturas";
         public Form1()
         {
             InitializeComponent();
@@ -128,13 +131,25 @@ namespace WindowsFormsApp
             CargaPac();
             CargaProv();
             CargaPer();
+            CargaPag();
+            CargaFact();
 
+        }
+        private void CargaFact()
+        {
+            dynamic resPac = this.Get(Url + UrlFactura, null);
+            DgFact.DataSource = resPac;
         }
         private void CargaPac()
         {
-            String Pacientes = "Pacientes";
-            dynamic resPac = this.Get(Url + Pacientes, null);
+            dynamic resPac = this.Get(Url + UrlPacientes, null);
             dgPac.DataSource = resPac;
+            ddlPacientePri.DataSource = resPac;
+            ddlPacientePri.DisplayMember = "Codigo";
+            ddlPacientePri.ValueMember = "Id";
+            ddPacienteFac.DataSource = resPac;
+            ddPacienteFac.DisplayMember = "Codigo";
+            ddPacienteFac.ValueMember = "Id";
         }
         private void CargaPer()
         {
@@ -149,6 +164,13 @@ namespace WindowsFormsApp
 
             dynamic resProv = this.Get(Url + UrlProveedores, null);
             dgProv.DataSource = resProv;
+        }
+
+        private void CargaPag()
+        {
+
+            dynamic resProv = this.Get(Url + UrlPagos, null);
+            dgPrima.DataSource = resProv;
         }
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -191,6 +213,63 @@ namespace WindowsFormsApp
                 return null;
             }
         }
+        private Pagos GetValuePago()
+        {
+            try
+            {
+                var Pagos = new Pagos();
+                Pagos.Anio = Int32.Parse(anioPri.Text);
+                Pagos.Mes = Int32.Parse(MesPri.Text);
+                Pagos.MontoPago = Decimal.Parse(MontoPri.Text);
+                Pagos.FechaPago = FechaCoberturaPac.SelectionRange.Start;
+                Pagos.PacienteId = Guid.Parse(ddlPacientePri.SelectedValue.ToString());
+                Pagos.Boleta = Int32.Parse(BoletaPri.Text);
+                Pagos.Estado = "Activo";
+                return Pagos;
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Validar correctamente El ingreso de Datos", Ex.Message.ToString());
+                return null;
+            }
+        }
+
+        private Factura GetValueFact()
+        {
+            try
+            {
+                var factura = new Factura();
+                factura.Monto =  decimal.Parse(MontoFact.Text);
+                factura.Numero = NumeroFact.Text;
+                factura.PacienteId = Guid.Parse(ddPacienteFac.SelectedValue.ToString());
+                factura.Serie = SerieFact.Text;
+                factura.CantidadMedicamentos = Int32.Parse(CantidadFact.Text);
+                factura.FechaFactura = FechaCompraFact.SelectionRange.Start;
+
+                return factura;
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Validar correctamente El ingreso de Datos", Ex.Message.ToString());
+                return null;
+            }
+        }
+
+        private void ClearFormFact()
+        {
+            MontoFact.Clear();
+            NumeroFact.Clear();
+            SerieFact.Clear();
+            CantidadFact.Clear();
+        }
+
+        private void ClearFormPago()
+        {
+            anioPri.Clear();
+            MesPri.Clear();
+            MontoPri.Clear();
+            BoletaPri.Clear();
+        }
 
         private Paciente GetValuePac()
         {
@@ -202,7 +281,7 @@ namespace WindowsFormsApp
                 Paciente.MontoCobertura = Decimal.Parse(CoberturaPac.Text);
                 Paciente.MontoDeducible = Decimal.Parse(DeduciblePac.Text);
                 Paciente.Telefono = Int32.Parse(TelefonoPac.Text);
-                Paciente.PersonaId = Guid.Parse(ddlPersonas.SelectedItem.ToString());
+                Paciente.PersonaId = Guid.Parse(ddlPersonas.SelectedValue.ToString());
                 Paciente.Estado = "Activo";
 
                 return Paciente;
@@ -500,6 +579,71 @@ namespace WindowsFormsApp
         private void BtnLimpiarPac_Click(object sender, EventArgs e)
         {
             ClearFormPac();
+        }
+
+        private void BtnIngresar_Click(object sender, EventArgs e)
+        {
+
+            var Pac = GetValuePac();
+
+            var jsonString = JsonConvert.SerializeObject(Pac);
+
+            try
+            {
+                dynamic respuesta = this.Post(Url + UrlPacientes, jsonString);
+                ClearFormPac();
+                CargaPac();
+                MessageBox.Show("Ingresado correctamente");
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Datos Invalidos Intente de Nuevo");
+                Console.WriteLine(error.Message);
+            }
+        }
+
+        private void IngresarPri_Click(object sender, EventArgs e)
+        {
+
+            var Pag = GetValuePago();
+
+            var jsonString = JsonConvert.SerializeObject(Pag);
+
+            try
+            {
+                dynamic respuesta = this.Post(Url + UrlPagos, jsonString);
+                ClearFormPago();
+                CargaPag();
+                MessageBox.Show("Ingresado correctamente");
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Datos Invalidos Intente de Nuevo");
+                Console.WriteLine(error.Message);
+            }
+        }
+
+        private void BgnIngresoFact_Click(object sender, EventArgs e)
+        {
+            var Fac = GetValueFact();
+
+            var jsonString = JsonConvert.SerializeObject(Fac);
+
+            try
+            {
+                dynamic respuesta = this.Post(Url + UrlFactura ,jsonString);
+                ClearFormFact();
+                CargaFact();
+                MessageBox.Show("Ingresado correctamente");
+
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Datos Invalidos Intente de Nuevo");
+                Console.WriteLine(error.Message);
+            }
         }
     }
 }
