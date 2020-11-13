@@ -323,6 +323,7 @@ namespace WindowsFormsApp
             TelefonoPac.Clear();
             DeduciblePac.Clear();
             CoberturaPac.Clear();
+            txbIdPac.Clear();
 
         }
         private void ClearFormPer()
@@ -450,7 +451,7 @@ namespace WindowsFormsApp
                 {
 
                     dynamic resProv = this.Delete(Url + UrlProveedores + "/" + IdProv.Text, null);
-                    Proveedor proveedor = JsonConvert.DeserializeObject<Proveedor>(resProv.ToString());
+                    //Proveedor proveedor = JsonConvert.DeserializeObject<Proveedor>(resProv.ToString());
                     ClearForm();
                     CargaProv();
                     MessageBox.Show("Eliminado correctamente");
@@ -530,9 +531,9 @@ namespace WindowsFormsApp
                 {
 
                     dynamic resProv = this.Delete(Url + UrlPersonas + "/" + IdPer.Text, null);
-                    Proveedor personas = JsonConvert.DeserializeObject<Personas>(resProv.ToString());
-                    ClearForm();
-                    CargaProv();
+                    //Proveedor personas = JsonConvert.DeserializeObject<Personas>(resProv.ToString());
+                    ClearFormPer();
+                    CargaPer();
                     MessageBox.Show("Eliminado correctamente");
                 }
 
@@ -643,6 +644,65 @@ namespace WindowsFormsApp
             {
                 MessageBox.Show("Datos Invalidos Intente de Nuevo");
                 Console.WriteLine(error.Message);
+            }
+        }
+
+        private void BtnBuscarPac_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (txbIdPac.Text == "")
+                {
+                    MessageBox.Show("Agregue un UUID para buscar su proveedor");
+                }
+                else
+                {
+
+                    dynamic resProv = this.Get(Url + UrlPacientes + "/" + txbIdPac.Text, null);
+
+                    Paciente Paciente = JsonConvert.DeserializeObject<Paciente>(resProv.ToString());
+
+
+                    CodigoPac.Text = Paciente.Codigo.ToString();
+                    FechaCoberturaPac.SelectionRange.Start = Paciente.FechaCobertura;
+                    CoberturaPac.Text = Paciente.MontoCobertura.ToString();
+                    DeduciblePac.Text = Paciente.MontoDeducible.ToString();
+                    TelefonoPac.Text = Paciente.Telefono.ToString();
+                    ddlPersonas.SelectedValue = Paciente.PersonaId.ToString();
+
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString());
+            }
+        }
+
+        private void BtnEliminarPac_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (txbIdPac.Text == "")
+                {
+                    MessageBox.Show("Agregue un UUID para Eliminar su Persona");
+                }
+                else
+                {
+
+                    dynamic resProv = this.Delete(Url + UrlPacientes + "/" + txbIdPac.Text, null);
+                    //Proveedor personas = JsonConvert.DeserializeObject<Personas>(resProv.ToString());
+                    ClearFormPac();
+                    CargaPac();
+                    MessageBox.Show("Eliminado correctamente");
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message.ToString());
             }
         }
     }

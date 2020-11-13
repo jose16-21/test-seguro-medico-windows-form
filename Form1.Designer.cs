@@ -73,6 +73,8 @@
             this.Apellido1Per = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txbIdPac = new System.Windows.Forms.TextBox();
+            this.UUID = new System.Windows.Forms.Label();
             this.BtnLimpiarPac = new System.Windows.Forms.Button();
             this.dgPac = new System.Windows.Forms.DataGridView();
             this.BtnIngresar = new System.Windows.Forms.Button();
@@ -107,6 +109,7 @@
             this.ddlPacientePri = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.BgnIngresoFact = new System.Windows.Forms.Button();
             this.DgFact = new System.Windows.Forms.DataGridView();
             this.label31 = new System.Windows.Forms.Label();
             this.CantidadFact = new System.Windows.Forms.TextBox();
@@ -121,7 +124,6 @@
             this.ddPacienteFac = new System.Windows.Forms.ComboBox();
             this.label37 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BgnIngresoFact = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProv)).BeginInit();
@@ -572,6 +574,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.txbIdPac);
+            this.tabPage4.Controls.Add(this.UUID);
             this.tabPage4.Controls.Add(this.BtnLimpiarPac);
             this.tabPage4.Controls.Add(this.dgPac);
             this.tabPage4.Controls.Add(this.BtnIngresar);
@@ -597,6 +601,23 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // txbIdPac
+            // 
+            this.txbIdPac.Location = new System.Drawing.Point(379, 294);
+            this.txbIdPac.Name = "txbIdPac";
+            this.txbIdPac.Size = new System.Drawing.Size(297, 27);
+            this.txbIdPac.TabIndex = 36;
+            // 
+            // UUID
+            // 
+            this.UUID.AutoSize = true;
+            this.UUID.Location = new System.Drawing.Point(379, 239);
+            this.UUID.Name = "UUID";
+            this.UUID.Size = new System.Drawing.Size(44, 20);
+            this.UUID.TabIndex = 35;
+            this.UUID.Text = "UUID";
+            this.UUID.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // BtnLimpiarPac
             // 
@@ -639,6 +660,7 @@
             this.BtnBuscarPac.TabIndex = 31;
             this.BtnBuscarPac.Text = "Buscar";
             this.BtnBuscarPac.UseVisualStyleBackColor = true;
+            this.BtnBuscarPac.Click += new System.EventHandler(this.BtnBuscarPac_Click);
             // 
             // BtnEliminarPac
             // 
@@ -648,6 +670,7 @@
             this.BtnEliminarPac.TabIndex = 30;
             this.BtnEliminarPac.Text = "Eliminar";
             this.BtnEliminarPac.UseVisualStyleBackColor = true;
+            this.BtnEliminarPac.Click += new System.EventHandler(this.BtnEliminarPac_Click);
             // 
             // BtnActualizarPac
             // 
@@ -922,6 +945,16 @@
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // BgnIngresoFact
+            // 
+            this.BgnIngresoFact.Location = new System.Drawing.Point(619, 173);
+            this.BgnIngresoFact.Name = "BgnIngresoFact";
+            this.BgnIngresoFact.Size = new System.Drawing.Size(133, 29);
+            this.BgnIngresoFact.TabIndex = 46;
+            this.BgnIngresoFact.Text = "Ingresar";
+            this.BgnIngresoFact.UseVisualStyleBackColor = true;
+            this.BgnIngresoFact.Click += new System.EventHandler(this.BgnIngresoFact_Click);
+            // 
             // DgFact
             // 
             this.DgFact.AllowUserToAddRows = false;
@@ -1041,16 +1074,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(300, 188);
             this.dataGridView1.TabIndex = 16;
             // 
-            // BgnIngresoFact
-            // 
-            this.BgnIngresoFact.Location = new System.Drawing.Point(619, 173);
-            this.BgnIngresoFact.Name = "BgnIngresoFact";
-            this.BgnIngresoFact.Size = new System.Drawing.Size(133, 29);
-            this.BgnIngresoFact.TabIndex = 46;
-            this.BgnIngresoFact.Text = "Ingresar";
-            this.BgnIngresoFact.UseVisualStyleBackColor = true;
-            this.BgnIngresoFact.Click += new System.EventHandler(this.BgnIngresoFact_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1059,7 +1082,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "Form1";
-            this.Text = "Segundo Parcial";
+            this.Text = "UMG Final ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -1180,6 +1203,8 @@
         private System.Windows.Forms.DataGridView dgPrima;
         private System.Windows.Forms.DataGridView DgFact;
         private System.Windows.Forms.Button BgnIngresoFact;
+        private System.Windows.Forms.TextBox txbIdPac;
+        private System.Windows.Forms.Label UUID;
     }
 }
 
